@@ -1,4 +1,4 @@
-interface Task {
+export interface Task {
   id: number;
   title: string;
 }
@@ -15,7 +15,7 @@ interface Task {
 
 //type TaskAction = AddTask | DeleteTask;
 
-type TaskAction =
+export type TaskAction =
   | { type: 'ADD'; task: Task }
   | { type: 'DELETE'; taskId: number };
 

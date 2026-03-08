@@ -1,4 +1,4 @@
-type AuthAction =
+export type AuthAction =
   | { type: 'LOGIN'; username: string }
   | { type: 'LOGOUT'; };
 
