@@ -3,18 +3,21 @@ interface Task {
   title: string;
 }
 
-interface AddTask {
-    type: 'ADD';
-    task: Task;
-}
+// interface AddTask {
+//     type: 'ADD';
+//     task: Task;
+// }
 
-interface DeleteTask {
-    type: 'DELETE';
-    taskId: number;
-}
+// interface DeleteTask {
+//     type: 'DELETE';
+//     taskId: number;
+// }
 
-type TaskAction = AddTask | DeleteTask;
+//type TaskAction = AddTask | DeleteTask;
 
+type TaskAction =
+  | { type: 'ADD'; task: Task }
+  | { type: 'DELETE'; taskId: number };
 
 const tasksReducer = (tasks: Task[], action: TaskAction): Task[] => {
     switch (action.type) {
