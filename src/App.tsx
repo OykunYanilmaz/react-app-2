@@ -15,6 +15,7 @@ import HomePage from "./state-management/HomePage";
 import AuthProvider from "./state-management/auth/AuthProvider";
 // import TasksProvider from "./state-management/tasks/TasksProvider";
 import { TasksProvider } from "./state-management/tasks";
+import Counter from "./state-management/counter/Counter";
 
 function App() {
   // return <TodoList />;
@@ -35,6 +36,7 @@ function App() {
 
     <AuthProvider>
       <TasksProvider>
+        <Counter />
         <NavBar />
         <HomePage />
       </TasksProvider>
