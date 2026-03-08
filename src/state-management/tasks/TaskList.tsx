@@ -4,7 +4,8 @@ import TasksContext from "./tasksContext";
 // import AuthContext from "../contexts/authContext";
 // import useTasks from "./useTasks";
 // import useAuth from "../hooks/useAuth";
-import useAuth from "../auth/useAuth";
+// import useAuth from "../auth/useAuth";
+import useAuthStore from "../auth/store";
 
 const useTasks = () => useContext(TasksContext);
 
@@ -17,7 +18,8 @@ const TaskList = () => {
   // const { user } = useContext(AuthContext);
 
   const { tasks, dispatch } = useTasks();
-  const { user } = useAuth();
+  // const { user } = useAuth();
+  const { user } =  useAuthStore();
 
   return (
     <>
