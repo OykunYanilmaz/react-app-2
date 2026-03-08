@@ -1,11 +1,11 @@
-import { useContext, useReducer, useState } from 'react';
-import tasksReducer from './reducers/tasksReducer';
-import TasksContext from './contexts/tasksContext';
-import AuthContext from './contexts/authContext';
-import useTasks from './hooks/useTasks';
-import useAuth from './hooks/useAuth';
+import { useContext } from "react";
+// import tasksReducer from "./tasksReducer";
+import TasksContext from "./tasksContext";
+// import AuthContext from "../contexts/authContext";
+// import useTasks from "./useTasks";
+import useAuth from "../hooks/useAuth";
 
-
+const useTasks = () => useContext(TasksContext);
 
 const TaskList = () => {
   // const [tasks, setTasks] = useState<Task[]>([]);
@@ -27,7 +27,10 @@ const TaskList = () => {
           //   { id: Date.now(), title: 'Task ' + Date.now() },
           //   ...tasks,
           // ])
-          dispatch({ type: 'ADD', task: { id: Date.now(), title: 'Task ' + Date.now()} })
+          dispatch({
+            type: "ADD",
+            task: { id: Date.now(), title: "Task " + Date.now() },
+          })
         }
         className="btn btn-primary my-3"
       >
@@ -44,7 +47,7 @@ const TaskList = () => {
               className="btn btn-outline-danger"
               onClick={() =>
                 // setTasks(tasks.filter((t) => t.id !== task.id))
-                dispatch({ type: 'DELETE', taskId: task.id })
+                dispatch({ type: "DELETE", taskId: task.id })
               }
             >
               Delete
