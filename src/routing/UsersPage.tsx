@@ -1,9 +1,15 @@
 import React from "react";
 import UserList from "./UserList";
 import UserDetail from "./UserDetail";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
+import useAuth from "./hooks/useAuth";
 
 const UsersPage = () => {
+  const {user} = useAuth();
+
+  if(!user)
+    return <Navigate to={"/login"}></Navigate>
+
   return (
     <div className="row">
       <div className="col">
