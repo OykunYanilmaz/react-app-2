@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -16,13 +16,15 @@ const NavBar = () => {
               {/* <a className="nav-link active" href="#">
                 Home
               </a> */}
-              <Link to={"/"} className="nav-link">Home</Link>
+              {/* <Link to={"/"} className="nav-link">Home</Link> */}
+              <NavLink to={"/"} className="nav-link">Home</NavLink>
             </li>
             <li className="nav-item">
               {/* <a className="nav-link" href="#">
                 Users
               </a> */}
-              <Link to={"/users"} className="nav-link">Users</Link>
+              {/* <Link to={"/users"} className="nav-link">Users</Link> */}
+              <NavLink to={"/users"} className="nav-link">Users</NavLink>
             </li>
           </ul>
         </div>
